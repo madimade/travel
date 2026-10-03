@@ -1,6 +1,6 @@
 import {img} from '../data';
 export const wrap='mx-auto max-w-[1180px] px-5';
-export const card='rounded-2xl border border-[#f0d6e4] bg-white dark:border-[#4a2a60] dark:bg-[#2c1639]';
+export const card='rounded-2xl border border-[#f0d6e4] bg-white dark:border-[#4a2a60] dark:bg-[#2c1639] dark:text-white';
 export const button='inline-block rounded-full bg-p2 px-7 py-3 font-bold text-white transition hover:bg-[#8a2fe6] focus-visible:outline focus-visible:outline-4 focus-visible:outline-yellow-300';
 export const input='w-full rounded-xl border border-[#e3cfe0] bg-white px-4 py-3 text-[#3a1750] outline-none focus-visible:ring-4 focus-visible:ring-p1/40';
 export function Hero({title,sub,image='photo-1488646953014-85cb44e25828'}){return <div className="relative overflow-hidden bg-gradient-to-r from-p1 to-p2 text-white"><img src={img(image,1400)} className="absolute inset-0 h-full w-full object-cover opacity-30"/><div className={`${wrap} relative py-16`}><h1 className="text-5xl font-extrabold">{title}</h1><p className="mt-2 text-lg opacity-90">{sub}</p></div></div>}
