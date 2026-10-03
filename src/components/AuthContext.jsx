@@ -30,9 +30,9 @@ export function AuthProvider({ children }) {
       setUser({ ...demoUser, email });
       return { ok: true };
     },
-    signup: (name, email, password) => {
-      if (!name || !email || !password) return { ok: false, message: "Complete all fields." };
-      setUser({ name, email, avatar: name.split(" ").map(x => x[0]).slice(0,2).join("").toUpperCase() });
+    signup: (name, email, password, phone) => {
+      if (!name || !email || !password || !phone) return { ok: false, message: "Complete all fields." };
+      setUser({ name, email, phone, avatar: name.split(" ").map(x => x[0]).slice(0,2).join("").toUpperCase() });
       return { ok: true };
     },
     logout: () => setUser(null),
