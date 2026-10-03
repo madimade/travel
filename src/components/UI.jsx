@@ -1,0 +1,8 @@
+import {img} from '../data';
+export const wrap='mx-auto max-w-[1180px] px-5';
+export const card='rounded-2xl border border-[#f0d6e4] bg-white dark:border-[#4a2a60] dark:bg-[#2c1639]';
+export const button='inline-block rounded-full bg-p2 px-7 py-3 font-bold text-white transition hover:bg-[#8a2fe6] focus-visible:outline focus-visible:outline-4 focus-visible:outline-yellow-300';
+export const input='w-full rounded-xl border border-[#e3cfe0] bg-white px-4 py-3 text-[#3a1750] outline-none focus-visible:ring-4 focus-visible:ring-p1/40';
+export function Hero({title,sub,image='photo-1488646953014-85cb44e25828'}){return <div className="relative overflow-hidden bg-gradient-to-r from-p1 to-p2 text-white"><img src={img(image,1400)} className="absolute inset-0 h-full w-full object-cover opacity-30"/><div className={`${wrap} relative py-16`}><h1 className="text-5xl font-extrabold">{title}</h1><p className="mt-2 text-lg opacity-90">{sub}</p></div></div>}
+export function Rating({value}){return <span className="text-amber-400">★ {value}</span>}
+export function DestinationCard({d,saved,toggle}){return <article className={card+' overflow-hidden'}><img src={img(d.img,700)} alt={d.name} className="h-[230px] w-full object-cover"/><div className="p-5"><div className="flex items-baseline justify-between gap-2"><h3 className="text-xl font-bold">{d.name}</h3><Rating value={d.rating}/></div><p className="text-sm opacity-70">{d.country} · {d.days} days</p><p className="mt-2">{d.blurb}</p><div className="mt-4 flex items-center justify-between"><b className="text-lg text-p2">from ${d.price}</b><button onClick={()=>toggle(d.id)} className="rounded-full border px-3 py-1.5 text-sm">{saved.includes(d.id)?'♥ Saved':'♡ Save'}</button></div></div></article>}
